@@ -3,13 +3,19 @@ on: [push]
 jobs:
   test1:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.8", "3.10"]
     steps:
       - uses: actions/checkout@v3
       - name: Set up Python for Demo
         uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
       - name: Run tests
         run: sudo apt install python3-pytest; python3 -m pytest TP1/test.py;
       - name: Afficher Informations
         run: | 
           echo "Nom branche : ${{ github.ref }}"
           echo "OS : ${{ runner.os }}"
+          python --version
