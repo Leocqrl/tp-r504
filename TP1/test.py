@@ -11,3 +11,6 @@ def test_2():
 	assert f.puissance(-1,-1) == -1
 	assert f.puissance(-1,-2) == 1
 	assert f.puissance(-2,-1) == -0.5
+
+def test_3():
+	a
