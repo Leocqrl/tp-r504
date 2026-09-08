@@ -10,4 +10,6 @@ jobs:
       - name: Run tests
         run: sudo apt install python3-pytest; python3 -m pytest TP1/test.py;
       - name: Afficher Informations
-        run: echo "Nom branche : ${{ github.ref }}"; echo "OS : ${{ runner.os }}"
+        run: | 
+          echo "Nom branche : ${{ github.ref }}"
+          echo "OS : ${{ runner.os }}"
